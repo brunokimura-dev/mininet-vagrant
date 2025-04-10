@@ -42,8 +42,8 @@ def config_route(net):
         net['s' ].cmdPrint('route add default gw 192.168.2.1')
         net['r1'].cmdPrint('sysctl -w net.ipv4.ip_forward=1')
         net['r2'].cmdPrint('sysctl -w net.ipv4.ip_forward=1')
-        net['r1'].cmdPrint('route add -net 192.168.2.0/30 gw 10.0.0.2 dev r1-eth0')
-        net['r2'].cmdPrint('route add -net 192.168.1.0/30 gw 10.0.0.1 dev r2-eth0')
+        net['r1'].cmdPrint('route add -net 192.168.2.0/24 gw 10.0.0.2 dev r1-eth0')
+        net['r2'].cmdPrint('route add -net 192.168.1.0/24 gw 10.0.0.1 dev r2-eth0')
 
 def net_test(net):
         print "Network connectivity"
